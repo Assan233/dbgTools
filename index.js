@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                dbgTools
-// @namespace           https://www.gaoding.com/
-// @description         该插件仅在稿定内部使用，用以提高团队之间的协作效率
+// @namespace           *.gaoding.com*
+// @description         dbgTools
 // @license             BSD-3-Clause
 
 // @author              yisen
@@ -13,6 +13,7 @@
 
 // @connect             x.gdm.gaoding.com
 // @require             https://x.gdm.gaoding.com/artifacts/jquery.min.js
+// @require             https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js
 // @run-at              document-end
 // ==/UserScript==
 
@@ -56,12 +57,12 @@
     setTimeout(() => {
         try {
             const editor = document.querySelector('.editor-container').__vue__;
-            const scope = document.querySelector('.editor-container').__vue__.$parent.$parent.$parent.$parent.$parent.$parent.$parent.templet;
+            const scope = document.querySelector('.editor-container').__vue__.$parent.$parent.$parent.$parent.$parent.$parent.$parent;
             window.editor = editor || window.editor;
             window.scope = scope || window.scope;
 
-            const div = document.createElement('div');
-            div.style.cssText = 'position: fixed; z-index: 1000; left: 50%; top: 0; background: #888; color: #fff; transform: translateX(-50%); display: flex';
+            const wrap = document.createElement('div');
+            wrap.style.cssText = 'position: fixed; z-index: 1000; left: 50%; top: 0; background: #888; color: #fff; transform: translateX(-50%); display: flex';
 
 
             // 复制模板数据按钮
@@ -69,29 +70,20 @@
             btnCopyTemplet.innerText = '复制';
             btnCopyTemplet.style.cssText = 'padding: 10px;';
             btnCopyTemplet.addEventListener('click', window.copyTemplet);
-            div.appendChild(btnCopyTemplet);
-
-            // 显示刷新按钮
-            if (href === 'https://www.gaoding.com/design?mode=create') {
-                const btnRefresh = document.createElement('button');
-                btnRefresh.innerText = '刷新';
-                btnRefresh.style.cssText = 'padding: 10px; border-left: 1px solid #fff;';
-                btnRefresh.addEventListener('click', () => { location.replace(href) });
-                div.appendChild(btnRefresh);
-            }
+            wrap.appendChild(btnCopyTemplet);
 
             // 显示下拉菜单按钮
             const btnShowDropdown = document.createElement('button');
             btnShowDropdown.innerText = '▽';
             btnShowDropdown.style.cssText = 'padding: 10px; border-left: 1px solid #fff;';
             btnShowDropdown.addEventListener('click', window.showDropdown);
-            div.appendChild(btnShowDropdown);
+            wrap.appendChild(btnShowDropdown);
 
             // 下拉菜单
             const dropdown = document.createElement('div');
             window.$$dropdown = dropdown;
             dropdown.style.cssText = 'position: absolute; left: 0; top: 37px; background: #999; color: #fff width: 100%; display: none;';
-            div.appendChild(dropdown);
+            wrap.appendChild(dropdown);
 
             // 显示当前元素
             const btnShowElement = document.createElement('button');
@@ -115,7 +107,7 @@
              dropdown.appendChild(setTplElement);
 
 
-            document.body.appendChild(div);
+            document.body.appendChild(wrap);
 
         }
         catch (e) { }

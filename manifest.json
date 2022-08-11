@@ -1,0 +1,23 @@
+{
+  "name": "dbgTool",
+  "version": "0.1",
+  "description": "",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "options_page": "./options/index.html",
+  "icons": { "128": "./assets/icon.png" },
+  "permissions": [
+    "tabs",
+    "bookmarks",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "web_accessible_resources": ["sdk.js"],
+  "content_scripts": [ {
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["content.js"],
+    "all_frames": true
+  }],
+  "manifest_version": 2
+}

@@ -11,10 +11,10 @@ function setTpl(tpl) {
         });
 }
 
-function getEditorCurrentInfo(global) {
+function getEditorCurrentInfo() {
     const editor = document.querySelector('.editor-container').__vue__;
     const scope = document.querySelector('.editor-container').__vue__.$parent.$parent.$parent.$parent.$parent.$parent.$parent;
-
+    
     const {
         currentElement,
         currentSubElement,
@@ -29,8 +29,8 @@ function getEditorCurrentInfo(global) {
         tpl: scope.templet,
     }
 
-    Object.assign(global, current);
-    global.copy(scope.templet);
+    Object.assign(window, current);
+    window.copy(scope.templet);
     
     console.log('current ====> ', current);
 }

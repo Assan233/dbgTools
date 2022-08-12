@@ -38,7 +38,10 @@
                 "https://*/*"
             ],
             "js": [
-                "content.js"
+                "./content/index.js"
+            ],
+            "css": [
+                "./content/index.css"
             ],
             "all_frames": true
         }

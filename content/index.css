@@ -1,0 +1,21 @@
+.editor-dbg-tool {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    z-index: 1000;
+    top: 0;
+    left: 50%;
+    cursor: pointer;
+    background-image: url("https://cdn.dancf.com/fe-assets/20220810/Users/assan/Downloads/5baa0291544760a64c0f4b737a74ce25.png");
+    background-size: 32px 32px;
+    background-position: 0 0 16px 16px;
+}
+
+.editor-dbg-tool .menu {
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 320px;
+    background: #fff;
+    cursor: pointer;
+}

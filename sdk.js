@@ -21,7 +21,7 @@ function setTpl(tpl) {
         console.error(`templet is undefined`);
         return;
     }
-    
+
     const setTemplet = document.querySelector('.editor-container').__vue__.setTemplet;
     if (typeof tpl !== 'string') {
         return setTemplet(tpl)
@@ -46,7 +46,7 @@ function getEditorCurrentInfo(name) {
         scope,
         editor,
         currentElement,
-        currentElements: currentElement.elements,
+        currentElements: currentElement && currentElement.elements,
         currentSubElement,
         currentLayout,
         templet: scope.templet,

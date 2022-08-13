@@ -46,8 +46,8 @@ const currentDom = document.querySelector('.get-current');
 currentDom.addEventListener('click', getEditorCurrentInfo);
 
 // 设置模板
-const setTplDom = document.querySelector('.set-tpl');
-setTplDom.addEventListener('click', setTpl);
+const setTplBtn = document.querySelector('.set-tpl button');
+setTplBtn.addEventListener('click', setTpl);
 
 
 // handler

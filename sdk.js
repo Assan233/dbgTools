@@ -38,7 +38,6 @@ function getEditorCurrentInfo(name) {
     const scope = document.querySelector('.editor-container').__vue__.$parent.$parent.$parent.$parent.$parent.$parent.$parent;
 
     const {
-        selector,
         currentElement,
         currentSubElement,
         currentLayout
@@ -47,7 +46,7 @@ function getEditorCurrentInfo(name) {
         scope,
         editor,
         currentElement,
-        currentElements: selector.elements,
+        currentElements: currentElement.elements,
         currentSubElement,
         currentLayout,
         templet: scope.templet,

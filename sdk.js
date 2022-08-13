@@ -1,3 +1,21 @@
+// message
+window.addEventListener("message", (event) => {
+    if (event.source != window || event.data.from !== 'editor-dbg-tool') {
+        return;
+    }
+
+    const { type, name, tpl } = event.data;
+    switch (type) {
+        case 'current':
+            getEditorCurrentInfo(name)
+            break;
+        case 'setTpl':
+            setTpl(tpl)
+            break;
+    }
+}, false);
+
+// handler
 function setTpl(tpl) {
     const setTemplet = document.querySelector('.editor-container').__vue__.setTemplet;
 
@@ -11,11 +29,12 @@ function setTpl(tpl) {
         });
 }
 
-function getEditorCurrentInfo() {
+function getEditorCurrentInfo(name) {
     const editor = document.querySelector('.editor-container').__vue__;
     const scope = document.querySelector('.editor-container').__vue__.$parent.$parent.$parent.$parent.$parent.$parent.$parent;
-    
+
     const {
+        selector,
         currentElement,
         currentSubElement,
         currentLayout
@@ -24,18 +43,17 @@ function getEditorCurrentInfo() {
         scope,
         editor,
         currentElement,
+        currentElements: selector.elements,
         currentSubElement,
         currentLayout,
-        tpl: scope.templet,
+        templet: scope.templet,
     }
 
     Object.assign(window, current);
-    window.copy(scope.templet);
-    
-    console.log('current ====> ', current);
+    console.log(`${name} ===> `, current[name])
 }
 
-// 注入 window
+// 全局注入sdk
 Object.assign(window, {
     setTpl,
     crt: getEditorCurrentInfo

@@ -12,10 +12,12 @@
     },
     "permissions": [
         "tabs",
-        "bookmarks",
+        "activeTab",
+        "scripting",
         "http://*/*",
         "https://*/*"
     ],
+    "action": {},
     "web_accessible_resources": [
         {
             "resources": [

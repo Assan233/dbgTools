@@ -1,3 +1,24 @@
+/* set-tpl */
+.editor-dbg-tool .menu .set-tpl textarea {
+    width: 100%;
+    max-height: 120px;
+    min-height: 90px;
+    border-color: #e8e8e8;
+    border-radius: 6px;
+}
+
+/* get-current */
+.editor-dbg-tool .menu .get-current div {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.editor-dbg-tool .menu .get-current div button {
+    display: inline-block !important;
+    margin-right: 8px !important;
+}
+
+/* editor-dbg-tool */
 .editor-dbg-tool {
     position: fixed;
     width: 32px;
@@ -12,10 +33,89 @@
 }
 
 .editor-dbg-tool .menu {
+    display: none;
     position: absolute;
     left: 0;
     top: 50px;
     width: 320px;
     background: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
     cursor: pointer;
+    padding: 8px 16px;
+    text-align: left;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.editor-dbg-tool .menu .menu-item {
+    width: 100%;
+    margin-bottom: 12px;
+}
+.editor-dbg-tool .menu .menu-item label {
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.editor-dbg-tool .menu .menu-item button {
+    display: block;
+    color: #33383e;
+    background-color: #f1f2f4;
+    border-color: #f1f2f4;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    font-weight: 500;
+    cursor: pointer;
+    height: 40px;
+    line-height: 38px;
+    padding: 0 16px;
+    font-size: 14px;
+    border-radius: 8px;
+    margin: 4px 0;
+}
+.editor-dbg-tool .menu .menu-item button:hover {
+    background-color: #e7e8ea;
+    border-color: #e7e8ea;
+}
+
+.editor-dbg-tool .menu .menu-item textarea {
+    color: #33383e;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #e8eaec;
+    border-radius: 8px;
+    padding: 8px 12px;
+    vertical-align: bottom;
+    transition: all 0.3s, height 0s;
+    outline-color: rgba(0, 0, 0, 0.1);
+}
+.editor-dbg-tool .menu .menu-item textarea:hover {
+    border-color: #2254f4;
+    border-right-width: 1px !important;
+}
+
+/* default */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+button {
+    background: none;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
 }

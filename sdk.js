@@ -18,7 +18,8 @@ window.addEventListener("message", (event) => {
 // handler
 function setTpl(tpl) {
     if (!tpl) {
-        console.error(`tpl is undefined`)
+        console.error(`templet is undefined`);
+        return;
     }
     
     const setTemplet = document.querySelector('.editor-container').__vue__.setTemplet;

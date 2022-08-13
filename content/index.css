@@ -26,9 +26,13 @@
     top: 56px;
     right: 280px;
     cursor: pointer;
-    background-image: url("https://cdn.dancf.com/fe-assets/20220810/Users/assan/Downloads/5baa0291544760a64c0f4b737a74ce25.png");
+    border-radius: 8px;
     background-size: 32px 32px;
     background-position: 0 0 16px 16px;
+    background-repeat: no-repeat;
+    background-color: #f1f2f4;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    background-image: url("https://cdn.dancf.com/fe-assets/20220813/Users/assan/Downloads/506b63aeaa0025d00cd74d40e5e93b3a.png");
 }
 
 .editor-dbg-tool .menu {
@@ -85,10 +89,10 @@
     background-color: #fff;
     border: 1px solid #e8eaec;
     border-radius: 8px;
+    outline-width:0;
     padding: 8px 12px;
     vertical-align: bottom;
     transition: all 0.3s, height 0s;
-    outline-color: rgba(0, 0, 0, 0.1);
 }
 .editor-dbg-tool .menu .menu-item textarea:hover {
     border-color: #2254f4;

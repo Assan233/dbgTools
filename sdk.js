@@ -17,8 +17,11 @@ window.addEventListener("message", (event) => {
 
 // handler
 function setTpl(tpl) {
+    if (!tpl) {
+        console.error(`tpl is undefined`)
+    }
+    
     const setTemplet = document.querySelector('.editor-container').__vue__.setTemplet;
-
     if (typeof tpl !== 'string') {
         return setTemplet(tpl)
     }
@@ -49,7 +52,7 @@ function getEditorCurrentInfo(name) {
         templet: scope.templet,
     }
 
-    Object.assign(window, current, {$crt: current[name]});
+    Object.assign(window, current, { $crt: current[name] });
     console.log(`${name} ===> `, current[name])
 }
 

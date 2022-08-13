@@ -37,9 +37,11 @@ document.body.appendChild(wrap);
 const menu = document.createElement('div');
 menu.classList.add('menu')
 wrap.appendChild(menu);
-renderMenu(menuOptions)
+renderMenu(menuOptions);
+
 wrap.addEventListener('click', toggleMenu);
 menu.addEventListener('click', (e) => e.stopPropagation());
+document.body.addEventListener('click', () => toggleMenu(null, false));
 
 // 获取当前编辑器状态
 const currentDom = document.querySelector('.get-current');
@@ -65,7 +67,12 @@ function renderMenu(options) {
     });
 }
 
-function toggleMenu(e) {
+function toggleMenu(e, enable) {
+    if (typeof enable === "boolean") {
+        menu.style.display = enable ? 'inline-block' : 'none'
+        return
+    }
+
     e.stopPropagation();
     const isHidden = menu.style.display === 'none';
     menu.style.display = isHidden ? 'inline-block' : 'none'

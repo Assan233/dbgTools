@@ -24,8 +24,8 @@
     width: 32px;
     height: 32px;
     z-index: 1000;
-    top: 0;
-    left: 50%;
+    top: 56px;
+    right: 280px;
     cursor: pointer;
     background-image: url("https://cdn.dancf.com/fe-assets/20220810/Users/assan/Downloads/5baa0291544760a64c0f4b737a74ce25.png");
     background-size: 32px 32px;
@@ -34,9 +34,10 @@
 
 .editor-dbg-tool .menu {
     display: none;
+    user-select: none;
     position: absolute;
-    left: 0;
-    top: 50px;
+    left: -288px;
+    top: 36px;
     width: 320px;
     background: #fff;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);

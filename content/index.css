@@ -1,7 +1,6 @@
 /* set-tpl */
 .editor-dbg-tool .menu .set-tpl textarea {
     width: 100%;
-    max-height: 120px;
     min-height: 90px;
     border-color: #e8e8e8;
     border-radius: 6px;

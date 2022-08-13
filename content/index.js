@@ -77,6 +77,10 @@ function getEditorCurrentInfo(e) {
 }
 
 function setTpl() {
-    const tpl = document.querySelector('.editor-dbg-tool .set-tpl').value;
+    let tpl = document.querySelector('.editor-dbg-tool .set-tpl textarea').value || '';
+    if (tpl.length > 300) {
+        tpl = JSON.parse(tpl);
+    }
+
     postMsg({ type: 'setTpl', tpl })
 }

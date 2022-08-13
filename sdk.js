@@ -49,7 +49,7 @@ function getEditorCurrentInfo(name) {
         templet: scope.templet,
     }
 
-    Object.assign(window, current);
+    Object.assign(window, current, {$crt: current[name]});
     console.log(`${name} ===> `, current[name])
 }
 

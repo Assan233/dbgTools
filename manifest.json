@@ -6,7 +6,6 @@
         "service_worker": "background.js",
         "type": "module"
     },
-    "options_page": "./options/index.html",
     "icons": {
         "128": "./assets/icon.png"
     },

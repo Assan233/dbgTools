@@ -23,8 +23,8 @@
                 "sdk.js"
             ],
             "matches": [
-                "http://*/*",
-                "https://*/*"
+                "http://*.gaoding.com/*",
+                "https://*.gaoding.com/*"
             ],
             "extension_ids": [
                 "mkplamemkjkbiokaobmjbnpmcahkonjo"
@@ -35,8 +35,8 @@
     "content_scripts": [
         {
             "matches": [
-                "http://*/*",
-                "https://*/*"
+                "http://*.gaoding.com/*",
+                "https://*.gaoding.com/*"
             ],
             "js": [
                 "./content/index.js"

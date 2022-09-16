@@ -21,8 +21,22 @@ const menuOptions = [
         class: 'set-tpl',
         html: `<label>设置模板</label>
         <div>
-            <textarea type="text"></textarea>
+            <textarea type="text" placeholder="支持 content对象 和 content url" ></textarea>
             <button>设置模板</button>
+        </div>`
+    },
+    {
+        class: 'editor-export',
+        html: `<label>编辑器出图</label>
+        <div>
+            <button class="png">PNG</button>
+            <button class="jpg">JPG</button>
+            <button class="ppt">PPT</button>
+            <button class="gif">GIF</button>
+            <button class="mp4">MP4</button>
+            <button class="back-png">后端出图-PNG</button>
+            <button class="back-mp4">后端出图-MP4</button>
+            <button class="back-pdf">后端出图-PDF</button>
         </div>`
     },
 
@@ -50,6 +64,12 @@ currentDom.addEventListener('click', getEditorCurrentInfo);
 // 设置模板
 const setTplBtn = document.querySelector('.set-tpl button');
 setTplBtn.addEventListener('click', setTpl);
+
+// 编辑器出图
+const exportBtn = document.querySelector('.editor-export');
+exportBtn.addEventListener('click', handleExport);
+
+
 
 
 // handler
@@ -90,4 +110,9 @@ function setTpl() {
     }
 
     postMsg({ type: 'setTpl', tpl })
+}
+
+function handleExport(e) {
+    const format = e.target.className;
+    postMsg({ type: 'editorExport', format })
 }

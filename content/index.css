@@ -17,6 +17,17 @@
     margin-right: 8px !important;
 }
 
+/* editor-export */
+.editor-dbg-tool .menu .editor-export div {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.editor-dbg-tool .menu .editor-export div button {
+    display: inline-block !important;
+    margin-right: 8px !important;
+}
+
 /* editor-dbg-tool */
 .editor-dbg-tool {
     position: fixed;

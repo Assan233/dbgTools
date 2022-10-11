@@ -54,7 +54,7 @@ function getEditorCurrentInfo(name) {
         currentElements: currentElement && currentElement.elements,
         currentSubElement,
         currentLayout,
-        templet: scope.templet,
+        templet: scope?.templet,
     }
 
     Object.assign(window, current, { $crt: current[name] });
@@ -64,7 +64,6 @@ function getEditorCurrentInfo(name) {
 // 编辑器出图
 function editorExport(format) {
     const editor = document.querySelector('.editor-container').__vue__;
-    console.log(format);
 
     switch (format) {
         case 'jpg':

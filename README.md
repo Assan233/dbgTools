@@ -1,2 +1,2 @@
-# debugger-tools
-debugger-tools
+# editor-tools
+editor-tools
